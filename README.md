@@ -52,7 +52,7 @@ There are two processes you can turn off/on within the backup_site.sh shell scri
 don't want to send the backup files to the account), you can disable it by commenting out the line of code below (comments are declared with a "#"). Note that this process can also be disabled in the config.php 
 file settings (discussed in the next section).
 
-  php $send_to_cloud_path $this_directory/"backups"/$backup_name $backup_name
+  **php $send_to_cloud_path $this_directory/"backups"/$backup_name $backup_name**
 
 **IMPORTANT NOTE:**  If you disable this process, be sure to also disable the process below.  If you don't, you will be deleting your backup files immediately after they have been created.
 
@@ -61,7 +61,7 @@ file settings (discussed in the next section).
 and saving the archives to your Rackspace Cloud Files, it's probably not necessary to keep these files stored on your Cloud Site account.  This system is designed to automatically delete the backup file from your
 from your web after it has been uploaded to your Cloud Files Account.  That said, you can disable this process by commenting out the following line of code (comments are declared with a "#").
 
-  rm $this_directory/"backups"/$backup_name 
+  **rm $this_directory/"backups"/$backup_name**
 
 
 #### Configuring the Cloud Files backup transfer (/php/config.php)
@@ -70,12 +70,12 @@ following settings:
 
 ##### General Settings
 
-**username** - Enter the username for your Rackspace Cloud File Account
-**api_key** - Enter the API 
-**container_name** - Enter the name of the container you would like these backups to be stored in
-**send_to_rackspace** - Specify whether you would like to send these backups to your rackspace cloud files account (true or false)
-**auth_url** - If you have a US based rackspace account - leave this as is.  If you have a UK Based Rackspace Account uncomment the following variable: 
-  //$auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0/";
+  **username** - Enter the username for your Rackspace Cloud File Account
+  **api_key** - Enter the API
+  **container_name** - Enter the name of the container you would like these backups to be stored in
+  **send_to_rackspace** - Specify whether you would like to send these backups to your rackspace cloud files account (true or false)
+  **auth_url** - If you have a US based rackspace account - leave this as is.  If you have a UK Based Rackspace Account uncomment the following variable: 
+    //$auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0/";
                     
 
 ##### Customized Settings - Backup Tasks
@@ -83,16 +83,16 @@ If you are using the system in conjunction with Rackspace Cloud Files, it's also
 the system to automatically delete archives that are no longer needed.  This will help ensure that 2 years down the road, you don't have to sift through 730 backup files to find the one you are
 looking for (or so you don't have to take the time to delete 700 backups which are no longer relevant).
 
-**prune_old_backups** - Specify true if you would like the system to delete up old backup files.  Set to false if you would to keep all backup files
-**prune_schedule** - Set to weekly to delete backup files on a weekly basis.  Set to monthly to delete backup files on a monthly basis
-**number_of_backups_to_keep** - Specify the number of backups to keep based on your prune scheduled
-  Example:  A prune_schedule of weekly with a value of 2 set here will delete all but 2 backups for each week.
+  **prune_old_backups** - Specify true if you would like the system to delete up old backup files.  Set to false if you would to keep all backup files
+  **prune_schedule** - Set to weekly to delete backup files on a weekly basis.  Set to monthly to delete backup files on a monthly basis 
+  **number_of_backups_to_keep** - Specify the number of backups to keep based on your prune scheduled
+    Example:  A prune_schedule of weekly with a value of 2 set here will delete all but 2 backups for each week.
 
 **NOTE:** pruning will not delete the backup files in the current week or month.  Only past weeks/months backup files will be deleted here
 
 ###### Do Not Change:
-**backup_file** - This is configured by the backup_script.sh file
-**backup_file_name** - This is conifugred by the backup_script.sh file
+  **backup_file** - This is configured by the backup_script.sh file
+  **backup_file_name** - This is conifugred by the backup_script.sh file
 
 
 #### Turning your backup system on
