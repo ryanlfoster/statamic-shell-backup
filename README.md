@@ -12,29 +12,28 @@ Copy the entire "statamic-shell-backup" folder to the root directory of the Clou
 ### Configuration
 
 #### Configuring the shell script (backup_site.sh)
-If you are installing this system on a website running under a Rackspace Cloud Site account, modifying this file should not be necessary (unless you want to of course).  
-If you are installing this system on any other host, the following information should allow you to get this file configured very quickly.
+If you are installing this system on a website running under a Rackspace Cloud Site account, modifying this file should not be necessary (unless you want to of course).  If you are installing this system on any other host, the following information should allow you to get this file configured very quickly.
 
 
 ##### Variables:
-this_directory - Shouldn't need to change anything here.  This is getting the directory path for this particular file (e.g. /path/to/my/statamic-backup-system)
+*this_directory* - Shouldn't need to change anything here.  This is getting the directory path for this particular file (e.g. /path/to/my/statamic-backup-system)
     
-root_path - This also shouldn't need to be changed.  This is getting the path to the parent directory of the Statamic Backup System (e.g. /path/to/my)
+*root_path* - This also shouldn't need to be changed.  This is getting the path to the parent directory of the Statamic Backup System (e.g. /path/to/my)
     
-directory_to_backup - This variable sets the direct path to the specific directory you would like to backup.  In most situations, this would be your webroot (where all of your site files are stored).
+*directory_to_backup* - This variable sets the direct path to the specific directory you would like to backup.  In most situations, this would be your webroot (where all of your site files are stored).
 If you are setting this up on a site not hosted by Rackspace, this will most likely need to be changed.
 To change the directory that is being backed up when the system runs, modify the default '/web/content' path so it aligns with your specific webroot.
 E.g.
 
-If your webroot is located at:
+*If your webroot is located at:*
           
-/path/to/my/httpdocs/my-site
+  /path/to/my/httpdocs/my-site
           
-Change the directory_to_backup variable to:
+*Change the directory_to_backup variable to:*
             
-directory_to_backup="$root_path/httpdocs/my-site"
+  directory_to_backup="$root_path/httpdocs/my-site"
 
-date - This variable is used as part of the naming convention for the backup files that are created.  By default, the date string will appear as: YYYY-MM-DD-HH-SS
+*date* - This variable is used as part of the naming convention for the backup files that are created.  By default, the date string will appear as: YYYY-MM-DD-HH-SS
 Feel free to change this to what ever you would like.  Please note however, to ensure that the backup is run, the file is saved, and no files are overwritten, you need to be sure
 that the date string is completely unique. 
     
@@ -43,7 +42,7 @@ E.g.
 If you change the date variable formatting to YYYY-MM-DD and you run your backups twice a day, when the system runs the second time for the day, you may end up overwriting the first backup file 
 you created on that day.
            
-backup_name - Simply stated - this is the name that will be assigned to the backup file that is created once the system has run.  By default backup names are generated as follows: backup.YYYY-MM-DD-HH-SS.zip
+*backup_name* - Simply stated - this is the name that will be assigned to the backup file that is created once the system has run.  By default backup names are generated as follows: backup.YYYY-MM-DD-HH-SS.zip
    
    
 ##### Processes:
@@ -55,7 +54,7 @@ file settings (discussed in the next section).
         
 php $send_to_cloud_path $this_directory/"backups"/$backup_name $backup_name
         
-IMPORTANT NOTE:  If you disable this process, be sure to also disable the process below.  If you don't, you will be deleting your backup files immediately after they have been created.
+*IMPORTANT NOTE:*  If you disable this process, be sure to also disable the process below.  If you don't, you will be deleting your backup files immediately after they have been created.
       
         
 2.  Removing backups from your file system after the backup process has run - In order to backup your site, a compressed/archive file must first be created.  If you are running this backup system
