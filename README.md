@@ -74,6 +74,7 @@ following settings:
   **api_key** - Enter the API
   **container_name** - Enter the name of the container you would like these backups to be stored in
   **send_to_rackspace** - Specify whether you would like to send these backups to your rackspace cloud files account (true or false)
+  
   **auth_url** - If you have a US based rackspace account - leave this as is.  If you have a UK Based Rackspace Account uncomment the following variable: 
     //$auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0/";
                     
@@ -84,14 +85,18 @@ the system to automatically delete archives that are no longer needed.  This wil
 looking for (or so you don't have to take the time to delete 700 backups which are no longer relevant).
 
   **prune_old_backups** - Specify true if you would like the system to delete up old backup files.  Set to false if you would to keep all backup files
+  
   **prune_schedule** - Set to weekly to delete backup files on a weekly basis.  Set to monthly to delete backup files on a monthly basis 
+  
   **number_of_backups_to_keep** - Specify the number of backups to keep based on your prune scheduled
+  
     Example:  A prune_schedule of weekly with a value of 2 set here will delete all but 2 backups for each week.
 
 **NOTE:** pruning will not delete the backup files in the current week or month.  Only past weeks/months backup files will be deleted here
 
 ###### Do Not Change:
   **backup_file** - This is configured by the backup_script.sh file
+  
   **backup_file_name** - This is conifugred by the backup_script.sh file
 
 
