@@ -74,9 +74,8 @@ following settings:
   **api_key** - Enter the API
   **container_name** - Enter the name of the container you would like these backups to be stored in
   **send_to_rackspace** - Specify whether you would like to send these backups to your rackspace cloud files account (true or false)
-  
   **auth_url** - If you have a US based rackspace account - leave this as is.  If you have a UK Based Rackspace Account uncomment the following variable: 
-    //$auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0/";
+  //$auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0/";
                     
 
 ##### Customized Settings - Backup Tasks
