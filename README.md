@@ -1,4 +1,4 @@
-# Statamic Shell Backup
+# Rackspace Backup-o-matic
 =====================
 
 A simple shell based flat file archiving system.  This system was initially built for use with Rackspace Cloud Sites / Rackspace Cloud Files, but can be easily customize to work with other hosts.
